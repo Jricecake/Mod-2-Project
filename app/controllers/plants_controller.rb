@@ -12,6 +12,7 @@ class PlantsController < ApplicationController
     end
 
     def create
+        byebug
         @plant = Plant.create(plant_params)
         if @plant.valid?
             redirect_to @plant

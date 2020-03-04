@@ -26,19 +26,12 @@ ActiveRecord::Schema.define(version: 2020_03_03_014636) do
 
   create_table "plants", force: :cascade do |t|
     t.string "name"
-    t.string "type"
-    t.boolean "watered?"
-    t.integer "last_watered"
-    t.integer "room_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"
-    t.boolean "window?"
-    t.string "window_facing"
-    t.integer "location_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

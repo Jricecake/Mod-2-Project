@@ -1,0 +1,5 @@
+<h1><%=@room.name%></h1>
+<div>Current Plants:</div>
+<% @room.plants.each do |plant| %>
+    <%= plant.name %>
+    <% end %>

@@ -2,10 +2,6 @@ class CreatePlants < ActiveRecord::Migration[6.0]
   def change
     create_table :plants do |t|
       t.string :name
-      t.string :type
-      t.boolean :watered?
-      t.integer :last_watered
-      t.integer :room_id
 
       t.timestamps
     end

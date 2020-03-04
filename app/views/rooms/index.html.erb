@@ -1,0 +1,7 @@
+<h1>Rooms Page</h1>
+<% @rooms.all.each do |room| %>
+    <%= link_to room.name, room %><br>
+    <% end %>
+
+    <div><%= link_to "Return to Plants", plants_path%></div>
+<div><%= link_to "Return to Rooms", rooms_path%></div>

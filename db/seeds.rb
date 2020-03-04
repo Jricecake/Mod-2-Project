@@ -18,5 +18,3 @@ p3 = Plant.create(name: "Cactus")
 p4 = Plant.create(name: "Peperomia")
 p5 = Plant.create(name: "Ficus")
 p6 = Plant.create(name: "Monstera")
-
-r1.plants << p6

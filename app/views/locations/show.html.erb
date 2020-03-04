@@ -1,0 +1,14 @@
+<h1>Location</h1>
+<h2><%= @location.name %><br></h2>
+
+<body>
+<% if @location.rooms.first != nil %>
+    <div>This place has:</div> 
+        <ul><% @location.rooms.each do |room| %>
+                <li><%= link_to room.name, room %></li>
+        <% end %>
+                </ul>
+        <% else %>
+        <div>No Rooms???</div><br>
+<% end %>
+</body>

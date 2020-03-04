@@ -1,0 +1,20 @@
+<h1>Plant Page!</h1>
+<h2><%= @plant.name %><br></h2>
+
+<body>
+<% if @plant.rooms.first != nil %>
+    <div>This plant is currently in:</div> 
+        <ul><% @plant.rooms.each do |room| %>
+                <li><%= room.name %></li>
+        <% end %>
+                </ul>
+        <% else %>
+        <div>This plant is in no rooms!</div><br>
+<% end %>
+</body>
+
+
+
+
+<div><%= link_to "Return to Plants", plants_path%></div>
+<div><%= link_to "Return to Rooms", rooms_path%></div>

@@ -1,5 +1,21 @@
 <h1><%=@room.name%></h1>
-<div>Current Plants:</div>
-<% @room.plants.each do |plant| %>
-    <%= plant.name %>
-    <% end %>
+<% if @room.plants.first != nil%>
+    <div>Current Plants:</div>
+    <ul><% @room.plants.each do |plant| %>
+        <li><%= link_to plant.name, plant   %></li>
+        <% end %>
+    <% else %>
+    <p>This room has no plants!</p>
+<% end %>
+</ul>
+
+Add Plant to Room:
+<%= form_for @room do |f|%>
+    <%= f.collection_select :plants, Plant.all, :id, :name %>
+    <%= f.submit "Add Plant" %>
+<%end%>
+
+
+
+<div><%= link_to "Return to Plants", plants_path%></div>
+<div><%= link_to "Return to Rooms", rooms_path%></div>

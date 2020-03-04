@@ -6,6 +6,21 @@ class RoomsController < ApplicationController
     
     def show
         @room = Room.all.find(params[:id])
+
+        @pr = PlantsRoom.new
+        # @pr.create(room_id: params[:id], plant_id: params[:plant_id])
+        
+    end
+
+    def update
+        # @room.update(room_params)
+    
+
+        # byebug
+        PlantsRoom.create(room_id: params[:id], plant_id: params[:room][:plant_ids])
+
+        @room = Room.all.find(params[:id])
+        redirect_to @room
     end
     def new
         @room = Room.new
@@ -23,6 +38,6 @@ class RoomsController < ApplicationController
 
     private
     def room_params
-        params.require(:room).permit(:name, :location_id)
+        params.require(:room).permit(:name, :location_id, :plant_ids)
     end
 end

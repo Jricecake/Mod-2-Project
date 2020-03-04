@@ -3,6 +3,10 @@ class PlantsController < ApplicationController
         @plants = Plant.all
     end
 
+    def show
+        @plant = Plant.find(params[:id])
+    end
+
     def new
         @plant = Plant.new
     end
@@ -15,10 +19,6 @@ class PlantsController < ApplicationController
             flash[:error]
             render :new
         end
-    end
-
-    def show
-        @plant = Plant.find(params[:id])
     end
 
     private

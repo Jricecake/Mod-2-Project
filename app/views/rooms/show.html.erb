@@ -11,11 +11,9 @@
 
 Add Plant to Room:
 <%= form_for @room do |f|%>
-    <%= f.collection_select :plants, Plant.all, :id, :name %>
+    <%= f.collection_select :plant_ids, Plant.all, :id, :name %>
     <%= f.submit "Add Plant" %>
 <%end%>
 
 
-
-<div><%= link_to "Return to Plants", plants_path%></div>
-<div><%= link_to "Return to Rooms", rooms_path%></div>
+<%= render "footer"%>

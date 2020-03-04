@@ -1,3 +1,4 @@
 class Plant < ApplicationRecord
-    belongs_to :room, optional: true
+    has_many :plants_rooms
+    has_many :rooms, through: :plants_rooms
 end

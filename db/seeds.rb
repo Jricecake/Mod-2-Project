@@ -7,5 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create(name: "Jonny")
 Location.create(name: "Home")
-Room.create(name: "Bed Room")
-Plant.create(name: "Pothos")
+Location.create(name: "Office")
+r1 = Room.create(name: "Bedroom")
+r2 = Room.create(name: "Living Room")
+r3 = Room.create(name: "Kitchen")
+r4 = Room.create(name: "Bathroom")
+p1 = Plant.create(name: "Pothos")
+p2 = Plant.create(name: "Rodhodendren")
+p3 = Plant.create(name: "Cactus")
+p4 = Plant.create(name: "Peperomia")
+p5 = Plant.create(name: "Ficus")
+p6 = Plant.create(name: "Monstera")
+
+r1.plants << p6

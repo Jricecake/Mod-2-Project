@@ -1,7 +1,14 @@
 <h1>SPECIFIC PLANT</h1>
 <p>This is a <%= @plantsroom.plant.name %>
-<p>Location: <%= @plantsroom.room.name %>
-<p>Description: <%= @plantsroom.description %>
+<p>Location: <%= @plantsroom.room.location.name %>
+<p>Room: <%= @plantsroom.room.name %>
+<p>Description: <%= @plantsroom.description %><br>
+
+<br><label>Edit Description</label>
+<%= form_for @plantsroom do |f| %>
+    <%= f.text_area :description %>
+    <%= f.submit "Change Description" %>
+    <%end%>
 
 
 <%= render "footer"%>

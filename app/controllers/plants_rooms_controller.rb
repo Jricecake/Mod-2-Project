@@ -13,6 +13,11 @@ class PlantsRoomsController < ApplicationController
         # byebug
         redirect_to @room
     end
+    def update
+        @plantsroom = PlantsRoom.find(params[:id])
+        @plantsroom.update(plantsrooms_params)
+        redirect_to @plantsroom
+    end
 
     private
     def plantsrooms_params

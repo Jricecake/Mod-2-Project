@@ -4,8 +4,8 @@
 <body>
 <% if @plant.rooms.first != nil %>
     <div>This plant is currently in:</div> 
-        <ul><% @plant.rooms.each do |room| %>
-                <li><%= room.name %></li>
+        <ul><% @plantsrooms.where(plant_id: @plant.id).each do |plant| %>
+                <li><%= link_to plant.room.name, plant.room %></li>
         <% end %>
                 </ul>
         <% else %>

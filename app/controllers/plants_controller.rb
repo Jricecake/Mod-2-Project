@@ -5,6 +5,7 @@ class PlantsController < ApplicationController
 
     def show
         @plant = Plant.find(params[:id])
+        @plantsrooms = PlantsRoom.all
     end
 
     def new
@@ -12,7 +13,7 @@ class PlantsController < ApplicationController
     end
 
     def create
-        byebug
+        # byebug
         @plant = Plant.create(plant_params)
         if @plant.valid?
             redirect_to @plant

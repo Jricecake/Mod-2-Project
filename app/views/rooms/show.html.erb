@@ -10,10 +10,11 @@
 </ul>
 
 Add Plant to Room:
-<%= form_for @room do |f|%>
-    <%= f.collection_select :plant_ids, Plant.all, :id, :name %>
+<%= form_for @pr do |f|%>
+    <%= f.collection_select :plant_id, Plant.all, :id, :name %>
     <label>Nickname?:</label>
     <%= f.text_field :nickname %>
+    <%= f.hidden_field :room_id, :value => @room.id %>
     <%= f.submit "Add Plant" %>
 <%end%>
 

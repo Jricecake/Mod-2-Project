@@ -1,6 +1,7 @@
 <h1>Create New Plant</h1>
 <%= form_for @plant do |f| %>
     <%= f.text_field :name %>
-    <%= f.collection_select :rooms, Room.all, :id, :name %>
     <%= f.submit %>
     <% end %>
+    <br>
+    <%= button_to "Cancel", plants_path, method: :get %>

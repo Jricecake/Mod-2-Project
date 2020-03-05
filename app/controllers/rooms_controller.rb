@@ -14,7 +14,6 @@ class RoomsController < ApplicationController
 
     def update
         # @room.update(room_params)
-    
 
         # byebug
         PlantsRoom.create(room_id: params[:id], plant_id: params[:room][:plant_ids])

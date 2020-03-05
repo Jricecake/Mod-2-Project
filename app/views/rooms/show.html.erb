@@ -1,8 +1,8 @@
 <h1><%=@room.name%></h1>
 <% if @room.plants.first != nil%>
     <div>Current Plants:</div>
-    <ul><% @room.plants.each do |plant| %>
-        <li><%= link_to plant.name, plant   %></li>
+    <ul><% @room.plants_rooms.each do |plant| %>
+        <li><%= link_to plant.plant.name, plant %></li>
         <% end %>
     <% else %>
     <p>This room has no plants!</p>
@@ -12,6 +12,8 @@
 Add Plant to Room:
 <%= form_for @room do |f|%>
     <%= f.collection_select :plant_ids, Plant.all, :id, :name %>
+    <label>Nickname?:</label>
+    <%= f.text_field :nickname %>
     <%= f.submit "Add Plant" %>
 <%end%>
 

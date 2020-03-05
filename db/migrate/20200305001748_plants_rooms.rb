@@ -5,7 +5,7 @@ class PlantsRooms < ActiveRecord::Migration[6.0]
       t.integer "room_id", null: false
       t.string "nickname", optional: true
       t.boolean "watered?", optional: true
-      t.timestamp
+      t.timestamps
     end
   end
 end

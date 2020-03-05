@@ -16,6 +16,6 @@ class PlantsRoomsController < ApplicationController
 
     private
     def plantsrooms_params
-        params.require(:plants_room).permit(:plant_id, :nickname, :room_id)
+        params.require(:plants_room).permit(:plant_id, :description, :room_id)
     end
 end

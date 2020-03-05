@@ -9,6 +9,11 @@
         <% end %>
                 </ul>
         <% else %>
-        <div>No Rooms???</div><br>
-<% end %>
+        <div>No Rooms have been added to this location yet!</div><br>
+<% end %><br>
+
+<%= form_for @location do |f| %>
+                <%= f.collection_select :room_ids, Room.all, :id, :name %>
+                <%= f.submit "Add Room"%>
+                <% end %>
 </body>

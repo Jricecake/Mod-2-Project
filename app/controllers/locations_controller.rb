@@ -22,6 +22,12 @@ class LocationsController < ApplicationController
         end
     end
 
+    def update
+        @location = Location.find(params[:id])
+        @location.rooms << Room.find(params["location"]["room_ids"])
+        redirect_to @location
+    end
+
     private
     def location_params
         params.require(:location).permit(:name, :room_ids)

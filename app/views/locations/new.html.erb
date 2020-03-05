@@ -1,0 +1,7 @@
+<h1>Create New Location</h1>
+
+<%= form_for @location do |f| %>
+    <label>Name: <%= f.text_field :name %></label><br>
+    <label>Address: <%= f.text_field :address %></label><br>
+    <%= f.submit "Create Location"%>
+<%end%>

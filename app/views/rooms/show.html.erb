@@ -12,8 +12,8 @@
 Add Plant to Room:
 <%= form_for @pr do |f|%>
     <%= f.collection_select :plant_id, Plant.all, :id, :name %>
-    <label>Nickname?:</label>
-    <%= f.text_field :nickname %>
+    <label>Plant Description:</label>
+    <%= f.text_field :description %>
     <%= f.hidden_field :room_id, :value => @room.id %>
     <%= f.submit "Add Plant" %>
 <%end%>

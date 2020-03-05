@@ -1,6 +1,7 @@
 class Location < ApplicationRecord
     has_many :locations_users
-    has_many :rooms
+    has_many :locations_rooms
+    has_many :rooms, through: :locations_rooms
     has_many :users, through: :locations_users
 
     def rooms_attributes=(rooms_attributes)

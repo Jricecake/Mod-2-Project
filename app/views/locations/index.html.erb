@@ -2,3 +2,5 @@
 <ul><% @locations.each do |location| %>
     <li><%= link_to location.name, location %></li>
 <% end %>
+
+<br><%= button_to "New", 'locations/new', method: :get %>

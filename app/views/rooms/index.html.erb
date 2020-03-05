@@ -1,11 +1,22 @@
 <h1>Rooms Page</h1>
-<% @rooms.all.each do |room| %>
-    <%= link_to room.name, room %><br>
-    <% end %>
-    <%= form_for @room do |f| %>
-    <%= f.text_field :name %>
-    <%= f.submit "Create Room"%>
-    <%end%>
+
+<% @locations.all.each do |location| %>
+        <% if location.rooms.first != nil %>
+            <label><%= link_to location.name, location %> has:
+            </label><br>
+            <% location.rooms.each do |room| %>
+            <%= link_to room.name, room %><br>
+            <% end %>
+            <% else %>
+            <%= link_to location.name, location %> has no rooms.
+        <% end %><br>
+    <% end %><br>
+
+
+
+
+
+
 
   
 <%= render "footer"%>

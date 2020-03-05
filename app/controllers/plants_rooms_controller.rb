@@ -4,6 +4,7 @@ class PlantsRoomsController < ApplicationController
     end
 
     def show
+        
         @plantsroom = PlantsRoom.find(params[:id])
     end
 

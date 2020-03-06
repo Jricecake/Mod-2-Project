@@ -28,7 +28,8 @@ class PlantsController < ApplicationController
 
     def update
         @plant = Plant.find(params[:id])
-        byebug
+        @plant.plants_rooms.first.update(room_id: params["plant"]["room_ids"])
+        redirect_to @plant
     end
 
     private

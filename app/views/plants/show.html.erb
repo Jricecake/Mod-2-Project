@@ -10,7 +10,7 @@
                 </ul>
 
         <%= form_for @plant do |f| %>
-        <%= f.collection_select :rooms, @plant.location.rooms, :id, :name%>
+        <%= f.collection_select :room_ids, @plant.location.rooms, :id, :name%>
         <%= f.submit "Change Room"%>
         <%end%>
 

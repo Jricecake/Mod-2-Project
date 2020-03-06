@@ -14,7 +14,8 @@ class LocationsController < ApplicationController
     end
 
     def create
-        @location = Location.create(location_params)
+        @user = User.find(location_params["user_id"])
+        @location = @user.locations.create(name: location_params["name"], address: location_params["address"])
         if @location.valid?
             redirect_to @location
         else
@@ -33,6 +34,6 @@ class LocationsController < ApplicationController
 
     private
     def location_params
-        params.require(:location).permit(:name, :room_ids)
+        params.require(:location).permit(:name, :room_ids, :user_id, :address)
     end
 end

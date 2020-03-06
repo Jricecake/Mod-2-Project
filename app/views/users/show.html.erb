@@ -1,13 +1,32 @@
-<h1>User Page</h1>
-<h2><%= @user.name %><br></h2>
+<h1><%= @user.name %>'s Page</h1>
+<h2><br></h2>
 
 <body>
 <% if @user.locations.first != nil %>
-    <div><%= @user.name %> currently has:</div> 
+    <div><%= @user.name %>'s currently locations:</div> 
         <ul><% @user.locations.each do |location| %>
                 <li><%= link_to location.name, location %></li>
-        <% end %>
+        <% end %></ul>
         <% else %>
         <div>This user has no locations yet!</div><br>
 <% end %>
+
+<%= form_for @location do |f| %>
+    <label>New Location: <%= f.text_field :name %></label><br>
+    <label>Address: <%= f.text_field :address %></label><br>
+    <%= f.hidden_field :user_id, :value => @user.id %></label><br>
+    <%= f.submit "Create Location"%>
+<%end%>
+
+
+<% if @user.plants.first != nil %>
+    <div><%= @user.name %>'s current plants:</div> 
+        <ul><% @user.plants.each do |plant| %>
+                <li><%= link_to plant.name, plant %></li>
+        <% end %></ul>
+        <% else %>
+        <div>This user has no locations yet!</div><br>
+<% end %>
+
 </body>
+

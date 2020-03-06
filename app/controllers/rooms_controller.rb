@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
     
     def show
         @room = Room.all.find(params[:id])
-        @pr = PlantsRoom.new
+        @plant = Plant.new
     end
 
     def update
@@ -21,9 +21,10 @@ class RoomsController < ApplicationController
     end
 
     def create
-        @room = Room.create(room_params)
+        @location = Location.find(params["room"]["location_id"])
+        @room = @location.rooms.create(room_params)
         if @room.valid?
-            redirect_to rooms_path
+            redirect_to @location
         else
             flash[:error]
             render :new

@@ -5,26 +5,34 @@ class PlantsController < ApplicationController
 
     def show
         @plant = Plant.find(params[:id])
+        @rooms = @plant.rooms
         @plantsrooms = PlantsRoom.all
     end
 
     def new
+        byebug
         @plant = Plant.new
     end
 
     def create
         # byebug
-        @plant = Plant.create(plant_params)
+        @room = Room.find(params["plant"]["room_id"])
+        @plant = @room.plants.create(plant_params)
         if @plant.valid?
-            redirect_to @plant
+            redirect_to @room
         else
             flash[:error]
             render :new
         end
     end
 
+    def update
+        @plant = Plant.find(params[:id])
+        byebug
+    end
+
     private
     def plant_params
-        params.require(:plant).permit(:name, :room_ids)
+        params.require(:plant).permit(:name, :description)
     end
 end

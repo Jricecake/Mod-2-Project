@@ -1,9 +1,12 @@
 <h1>Rooms Page</h1>
 
 <% @locations.all.each do |location| %>
-    <% LocationsRoom.where(location_id: location.id).each do |room| %>
-        <%= link_to room.room.name, room%>
+    <ul>
+    <%=location.name%> has:
+    <% location.rooms.each do |room| %>
+        <li><%= link_to room.name, room %></li>
         <% end %>
+        </ul>
 <% end %>
 
 

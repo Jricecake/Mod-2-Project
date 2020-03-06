@@ -8,9 +8,17 @@
                 <li><%= link_to plant.room.name, plant.room %></li>
         <% end %>
                 </ul>
+
+        <%= form_for @plant do |f| %>
+        <%= f.collection_select :rooms, @plant.location.rooms, :id, :name%>
+        <%= f.submit "Change Room"%>
+        <%end%>
+
         <% else %>
         <div>This plant is in no rooms!</div><br>
 <% end %>
+
+
 </body>
 
 

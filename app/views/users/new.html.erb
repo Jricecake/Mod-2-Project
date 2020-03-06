@@ -1,0 +1,7 @@
+<h1>Create New User</h1>
+<%= form_for @user do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+    <% end %>
+    <br>
+    <%= button_to "Cancel", users_path, method: :get %>

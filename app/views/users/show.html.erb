@@ -1,0 +1,13 @@
+<h1>User Page</h1>
+<h2><%= @user.name %><br></h2>
+
+<body>
+<% if @user.locations.first != nil %>
+    <div><%= @user.name %> currently has:</div> 
+        <ul><% @user.locations.each do |location| %>
+                <li><%= link_to location.name, location %></li>
+        <% end %>
+        <% else %>
+        <div>This user has no locations yet!</div><br>
+<% end %>
+</body>

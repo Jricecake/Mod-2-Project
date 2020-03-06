@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2020_03_05_183719) do
 
   create_table "plants", force: :cascade do |t|
     t.string "name"
+    t.string "description"
+    t.boolean "watered?"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -41,9 +43,6 @@ ActiveRecord::Schema.define(version: 2020_03_05_183719) do
   create_table "plants_rooms", force: :cascade do |t|
     t.integer "plant_id", null: false
     t.integer "room_id", null: false
-    t.integer "locations_room_id", null: false
-    t.string "description"
-    t.boolean "watered?"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -17,12 +17,10 @@
         <% else %>
         <div>This plant is in no rooms!</div><br>
 <% end %>
-
-
 </body>
 
 
-
+<%= button_to "Delete Plant", @plant, method: :delete %>
 
 <div><%= link_to "Return to Plants", plants_path%></div>
 <div><%= link_to "Return to Rooms", rooms_path%></div>

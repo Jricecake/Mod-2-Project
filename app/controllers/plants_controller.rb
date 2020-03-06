@@ -32,6 +32,14 @@ class PlantsController < ApplicationController
         redirect_to @plant
     end
 
+    def destroy
+        # byebug
+        @room = Plant.find(params[:id]).rooms.first
+        @plant = Plant.find(params[:id])
+        @plant.destroy
+        redirect_to @room
+    end
+
     private
     def plant_params
         params.require(:plant).permit(:name, :description)

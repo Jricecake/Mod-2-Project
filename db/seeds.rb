@@ -5,18 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(name: "Jonny")
-Location.create(name: "Home")
-Location.create(name: "Office")
+jonny = User.create(name: "Jonny")
+home = jonny.locations.create(name: "Home")
+office = jonny.locations.create(name: "Office")
 
-r1 = Room.create(name: "Bedroom")
-r2 = Room.create(name: "Living Room")
-r3 = Room.create(name: "Kitchen")
-r4 = Room.create(name: "Bathroom")
+bedroom = home.rooms.create(name: "Bedroom")
+living_room = home.rooms.create(name: "Living Room")
 
-p1 = Plant.create(name: "Pothos")
-p2 = Plant.create(name: "Rodhodendren")
-p3 = Plant.create(name: "Cactus")
-p4 = Plant.create(name: "Peperomia")
-p5 = Plant.create(name: "Ficus")
-p6 = Plant.create(name: "Monstera")
+bedroom.plants.create(name: "Pothos", description: "Hanging in the window", water_status: "low")
+bedroom.plants.create(name: "Monstera", description: "Small, but growing news leaves often", water_status: "watered")
+bedroom.plants.create(name: "Barrel Cactus", description: "Brought from Texas...not liking this environment", water_status: "low")
+bedroom.plants.create(name: "Peperomia", description: "Growing quick!", water_status: "watered")
+
+

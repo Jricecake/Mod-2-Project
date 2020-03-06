@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_183719) do
   create_table "plants", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.boolean "watered?"
+    t.string "water_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

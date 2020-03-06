@@ -19,9 +19,12 @@ ActiveRecord::Schema.define(version: 2020_03_05_183719) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "locations_rooms", id: false, force: :cascade do |t|
+  create_table "locations_rooms", force: :cascade do |t|
     t.integer "location_id", null: false
     t.integer "room_id", null: false
+    t.integer "plants_room_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "locations_users", id: false, force: :cascade do |t|
@@ -38,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_183719) do
   create_table "plants_rooms", force: :cascade do |t|
     t.integer "plant_id", null: false
     t.integer "room_id", null: false
+    t.integer "locations_room_id", null: false
     t.string "description"
     t.boolean "watered?"
     t.datetime "created_at", precision: 6, null: false

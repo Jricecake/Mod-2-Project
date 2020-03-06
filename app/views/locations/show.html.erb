@@ -2,18 +2,19 @@
 <h2><%= @location.name %><br></h2>
 
 <body>
-<% if @location.rooms.first != nil %>
+<% if @location.current_rooms.first != nil %>
     <div>This place has:</div> 
-        <ul><% @location.rooms.each do |room| %>
-                <li><%= link_to room.name, room %></li>
+        <ul><% @location.current_rooms.each do |room| %>
+                <li><%= link_to room.room.name, room %></li>
         <% end %>
                 </ul>
         <% else %>
         <div>No Rooms have been added to this location yet!</div><br>
 <% end %><br>
 
-<%= form_for @location do |f| %>
-                <%= f.collection_select :room_ids, Room.all, :id, :name %>
+<%= form_for @locationsroom do |f| %>
+                <%= f.collection_select :room_id, Room.all, :id, :name %>
                 <%= f.submit "Add Room"%>
+                <%= f.hidden_field :location_id, :value => @location.id %>
                 <% end %>
 </body>

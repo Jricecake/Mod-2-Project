@@ -6,6 +6,7 @@ class LocationsController < ApplicationController
 
     def show
         @location = Location.find(params[:id])
+        @locationsroom = LocationsRoom.new
     end
 
     def new
@@ -27,6 +28,8 @@ class LocationsController < ApplicationController
         @location.rooms << Room.find(params["location"]["room_ids"])
         redirect_to @location
     end
+
+
 
     private
     def location_params

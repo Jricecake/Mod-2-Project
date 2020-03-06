@@ -1,0 +1,20 @@
+<h1>SPECIFIC ROOM</h1>
+<p>This is a <%= @locationsroom.room.name %>
+<p><b>Location: </b><br>
+<%= @locationsroom.room.locations.first.name %>
+<p><b>Room: </b><br>
+<%= @locationsroom.room.name %>
+<p><b>Current Plants: </b><br>
+<% @locationsroom.room.plants.each do |plant| %>
+<%= link_to plant.name, plant %><br>
+<% end %>
+
+
+Add Plant to Room:
+<%= form_for @pr do |f|%>
+    <%= f.collection_select :plant_id, Plant.all, :id, :name %>
+    <label>Plant Description:</label>
+    <%= f.text_field :description %>
+    <%= f.hidden_field :room_id, :value => @locationsroom.room.id %>
+    <%= f.submit "Add Plant" %>
+<%end%>

@@ -9,4 +9,8 @@ class Location < ApplicationRecord
             self.rooms.build(room_attributes)
         end
     end
+
+    def current_rooms
+        LocationsRoom.where(location_id: self.id)
+    end
 end

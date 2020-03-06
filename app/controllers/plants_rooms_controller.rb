@@ -8,11 +8,18 @@ class PlantsRoomsController < ApplicationController
         @plantsroom = PlantsRoom.find(params[:id])
     end
 
+    def new
+        @plantsroom = PlantsRoom.new
+    end
+
     def create
+        @room = Room.new
+        byebug
         PlantsRoom.create(plantsrooms_params)
-        @room = Room.find(params["plants_room"]["room_id"])
         # byebug
-        redirect_to @room
+        @locationsroom = LocationsRoom.find(params["plants_room"]["room_id"])
+        # byebug
+        redirect_to @locationsroom
     end
     def update
         @plantsroom = PlantsRoom.find(params[:id])

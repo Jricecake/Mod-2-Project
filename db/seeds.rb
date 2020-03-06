@@ -8,10 +8,12 @@
 User.create(name: "Jonny")
 Location.create(name: "Home")
 Location.create(name: "Office")
+
 r1 = Room.create(name: "Bedroom")
 r2 = Room.create(name: "Living Room")
 r3 = Room.create(name: "Kitchen")
 r4 = Room.create(name: "Bathroom")
+
 p1 = Plant.create(name: "Pothos")
 p2 = Plant.create(name: "Rodhodendren")
 p3 = Plant.create(name: "Cactus")

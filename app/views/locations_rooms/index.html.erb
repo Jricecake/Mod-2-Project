@@ -1,0 +1,6 @@
+<h1>All Rooms</h1>
+<ul><% @locationsrooms.each do |room| %>
+    <li><%= link_to room.room.name, room %></li>
+<% end %>
+</ul>
+
